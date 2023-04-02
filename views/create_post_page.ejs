@@ -1,0 +1,34 @@
+<%- include("requires/header") %>
+<main data-aos="zoom-in" data-aos-duration="1000">
+  <a href="/blog" class="btn btn-primary border border-white ms-3 mt-3 ps-5 pe-5">Back</a>
+  <div class="d-flex justify-content-center pt-3">
+    <h1 class="display-5">Create new post</h1>
+  </div>
+  <section>
+    <div class="d-flex w-50">
+      <form action="/blog/add_post" method="post" class="d-flex flex-column">
+        <div class="form-elements">
+          <label for="header">Header</label>
+          <input type="text" name="post[header]" />
+        </div>
+        <div class="form-elements">
+          <label for="text">Text</label>
+          <textarea name="post[text]" cols="30" rows="10"></textarea>
+        </div>
+        <div style="display: none;">
+          <input type="text" name="post[user_id]" value='<%= user._id %>'>
+        </div>
+        <div style="display: none;">
+          <input type="text" name="post[username]" value='<%= user.username %>'>
+        </div>
+        <div class="form-elements d-flex justify-content-center align-items-center">
+          <input type="submit" value="Add Post" class="w-50" />
+        </div>
+      </form>
+    </div>
+    <div class="d-flex flex-column w-50">
+      <img src="/images/new_post_image.svg" class="w-75">
+  </div>
+  </section>
+</main>
+<%- include("requires/footer") %>

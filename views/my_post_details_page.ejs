@@ -1,0 +1,32 @@
+<%- include("requires/header") %>
+    <main data-aos="zoom-in" data-aos-duration="1000">
+        <a href="/blog/my_posts" class="btn btn-primary border border-white ms-3 mt-3 ps-5 pe-5">Back</a>
+        <section>
+            <div class="d-flex w-50">
+                <div class="d-flex flex-column">
+                    <form action="/blog/update_post" method="post" class="d-flex flex-column">
+                        <div class="form-elements">
+                            <label for="header">Header</label>
+                            <input type="text" name="post[header]" value="<%= post.header %>">
+                        </div>
+                        <div class="form-elements">
+                            <label for="text">Text</label>
+                            <textarea name="post[text]" cols="30" rows="10"><%= post.text %></textarea>
+                        </div>
+                        <div class="form-elements d-flex justify-content-center align-items-center">
+                            <input type="submit" value="Update" class="w-50 btn btn-success">
+                        </div>
+                        <input type="hidden" name="id" value="<%= post.id %>">
+                    </form>
+                    <form action="/blog/delete_post" method="post" class="pt-5">
+                        <input type="submit" value="Delete" class="w-50 btn btn-danger">
+                        <input type="hidden" name="id" value="<%= post.id %>">
+                    </form>
+                </div>
+            </div>
+            <div class="d-flex flex-column w-50">
+                <img src="/images/update_image.svg" class="w-75">
+            </div>
+        </section>
+    </main>
+<%- include("requires/footer") %>

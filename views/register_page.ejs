@@ -1,0 +1,39 @@
+<%- include("requires/header") %>
+<main data-aos="zoom-in" data-aos-duration="1000">
+    <div class="d-flex justify-content-center pt-3">
+        <h1 class="display-5">Registration</h1>
+    </div>
+    <section>
+        <div class="d-flex w-50">
+            <form action="/validate_registration" method="post" class="d-flex flex-column justify-content-center ">
+                <div class="form-elements">
+                    <label for="username">Name</label>
+                    <input type="text" name="user[name]">
+                </div>
+                <div class="form-elements">
+                    <label for="surname">Surname</label>
+                    <input type="text" name="user[surname]">
+                </div>
+                <div class="form-elements">
+                    <label for="username">Username</label>
+                    <input type="text" name="user[username]">
+                </div>
+                <div class="form-elements">
+                    <label for="email">E-mail</label>
+                    <input type="email" name="user[email]">
+                </div>
+                <div class="form-elements">
+                    <label for="password">Password</label>
+                    <input type="password" name="user[password]">
+                </div>
+                <div class="form-elements d-flex justify-content-center align-items-center">
+                    <input type="submit" value="Register" class="w-50">
+                </div>
+            </form>
+        </div>
+        <div class="d-flex flex-column w-50">
+            <img src="/images/register_image.svg" class="w-75">
+        </div>
+    </section>
+</main>    
+<%- include("requires/footer") %>

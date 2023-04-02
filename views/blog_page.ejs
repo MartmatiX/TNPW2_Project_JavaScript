@@ -1,0 +1,17 @@
+<%- include("requires/header") %>
+<main data-aos="zoom-in" data-aos-duration="1000">
+    <section>
+        <div>
+            <div class="pb-5">
+                <h1 class="display-3">Welcome to our blog</h1>
+                <h1 class="display-1"><%= user.username %></h1>
+            </div>
+            <div class="pt-5 d-flex flex-row justify-content-between">
+                <a href="/blog/posts" class="btn btn-primary p-3">See posts</a>
+                <a href="/blog/create_post" class="btn btn-primary p-3">Create post</a>
+                <a href="/blog/my_posts" class="btn btn-primary p-3">My posts</a>
+            </div>
+        </div>
+    </section>
+</main>    
+<%- include("requires/footer") %>
