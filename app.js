@@ -115,10 +115,17 @@ app.get('/blog/my_posts/:postId', async (req, res) => {
         res.redirect('/login_page?error=notAuthorized');
         return;
     }
-    const postId = req.params.postId;
-    const user = req.session.user;
-    const post = await Post.findById({_id: postId});
-    res.render('my_post_details_page', { user, post });
+    try {
+        const postId = req.params.postId;
+        const user = req.session.user;
+        const post = await Post.findById({_id: postId});
+        res.render('my_post_details_page', { user, post });
+    } catch (error) {
+        const user = req.session.user;
+        const posts = await Post.find({username: user.username});
+        res.render('my_posts_page', { user, posts });
+        console.log(error);
+    }
 });
 
 // post methods
